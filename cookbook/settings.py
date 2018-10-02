@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # This will also make the `graphql_schema` management command available
+    'graphene_django',
+
     # Install the ingredients app
     'cookbook.ingredients',
 ]
@@ -51,6 +54,10 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+GRAPHENE = {
+    'SCHEMA': 'cookbook.schema.schema'
+}
 
 ROOT_URLCONF = 'cookbook.urls'
 
